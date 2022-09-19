@@ -7,16 +7,12 @@
         <script>
             function solution(s){  
                 let answer;
-                //console.log(s.indexOf("student"));
-                answer=s.filter((v, i)=>{
-                    //console.log(v, i);
-                    if(s.indexOf(v)===i) return v;
-                });
-
-                
+                // answer = new Set(s)  
+                // console.log(s.indexOf("time"));                       
+                answer = s.filter((element, index) => s.indexOf(element)=== index)
                 return answer;
             }
-            let str=["good", "time", "good", "time", "student"];
+            let str=["good", "time", "good", "time", "student","good"];
             console.log(solution(str));
         </script>
     </body>
