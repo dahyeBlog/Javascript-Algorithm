@@ -1,39 +1,51 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(arr){  
-                let answer=0;
-                let n=arr.length;
-                let dx=[-1, 0, 1, 0];
-                let dy=[0, 1, 0, -1];
-                for(let i=0; i<n; i++){
-                    for(let j=0; j<n; j++){
-                        let flag=1;
-                        for(let k=0; k<4; k++){
-                            let nx=i+dx[k];
-                            let ny=j+dy[k];
-                            if(nx>=0 && nx<n && ny>=0 && ny<n && arr[nx][ny]>=arr[i][j]){
-                                flag=0;
-                                break;
-                            }
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        function solution(arr) {
+            let answer = 0;
+            let n = arr.length;
+            let dx = [-1, 0, 1, 0] //기준점을 기준으로 12시방향, 3시방향, 6시방향 9방향의 행,열의 인덱스 위치
+            let dy = [0, 1, 0, -1]
+            for (let i = 0; i < n; i++) {
+                for (let j = 0; j < n; j++) {
+                    let flag = 1; //봉우리인지 아닌지 체크하는 flag
+                    for (let k = 0; k < 4; k++) { //4방면을 확인하는 for
+                        let nx = i + dx[k] //가려고 하는 방향. 행 좌표
+                        let ny = j + dy[k] //가려고하는 열 좌표
+                        if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny] >= arr[i][j]) {
+                            //arr[nx][ny]<=가려고하는 좌표 / arr[i][j]<= 내 좌표
+                            //nx>=0 && nx<n && ny>=0 && ny<n 는 내 위 옆 아래 옆이 존재하지 않는 경우도 있으니 그 경우는 제외하는 조건이다
+                        flag=0;
+                        break;
                         }
-                        if(flag) answer++;
                     }
-                }  
-                  
-                return answer;
+                    if(flag) answer++
+                }
             }
 
-            let arr=[[5, 3, 7, 2, 3], 
-                     [3, 7, 1, 6, 1],
-                     [7, 2, 5, 3, 4],
-                     [4, 3, 6, 4, 1],
-                     [8, 7, 3, 5, 2]];
-            console.log(solution(arr));
-        </script>
-    </body>
+
+
+
+
+
+            return answer;
+        }
+
+        let arr = [
+            [5, 3, 7, 2, 3],
+            [3, 7, 1, 6, 1],
+            [7, 2, 5, 3, 4],
+            [4, 3, 6, 4, 1],
+            [8, 7, 3, 5, 2]
+        ];
+        console.log(solution(arr));
+    </script>
+</body>
+
 </html>
