@@ -11,6 +11,7 @@ function min(a,b,c,d,e,f,g) {
 min(5,2,7,11,2,15,17)
 ```
 
+
 ## 풀이법2
 ```
 function min(arr) {
