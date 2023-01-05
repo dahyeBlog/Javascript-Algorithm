@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>10부제</title>
+    </head>
+    <body>
+
+        <script>
+
+            function car(day, arr) {
+
+                let answer = 0
+
+                for (let i = 0; i < arr[i]; i++) {
+                    if (arr[i] % 10 === day) 
+                        answer++
+                        // arr의 값을 10나누었을 때 나머지 값이 day의 값이 면 answer++해라.
+                    }
+                return answer
+
+            }
+
+            const arr = [
+                12,
+                20,
+                54,
+                30,
+                87,
+                91,
+                30
+            ]
+
+            car(0, arr)
+        </script>
+
+    </body>
+</html>
