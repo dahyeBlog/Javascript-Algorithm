@@ -43,3 +43,23 @@ const arr = [12,20,54,30,87,91,30]
 car(0,arr)
 
 ```
+
+## 풀이3
+```
+// 입력 숫자의 일의 자리 숫자와 날짜의 일의 자리 숫자 일치하는지 확인
+function solution(num, arr) {
+  let car = 0
+  // 배열의 값을 루프를 돌려 일의 자리를 추출
+    for(var i of arr){
+     if (i % 10 === num){
+        car++
+      }
+    }
+  // 배열의 일의 자리의 숫자와 num의 숫자와 같은지 확인
+  return car
+}
+
+let arr = [25,23,11,47,53,17,33]
+solution(3,arr)
+
+```
