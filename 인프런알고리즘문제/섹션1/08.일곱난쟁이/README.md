@@ -11,30 +11,35 @@
 
 ### 풀이
 ```
+// 9개의 숫자 중 7개의 합이 100임. 그 7의 숫자를 찾아라.
+// 9개의 숫자는 자연수임.
+
 function nan(arr) {
+ // 9개의 숫자의 총합을 더한다. 
   let answer = arr
-  let sum = answer.reduce((a,b) => a+b,0)
-  // reduce 함수로 arr의 전체 합을 구하기
-  
-  for(let i  = 0 ; i < arr.length; i++) {
-     for(let j = 1; j<arr.length; j++){
-      
-       if(sum - (arr[i]+ arr[j]) === 100 ) {
-          answer.splice(i,1)
-           // splice함수로 i번째의 숫자 한개를 삭제해라.
-          answer.splice(j,1)
-           // splice함수로 j번째의 숫자 한개를 삭제해라.
-       }
-      
-
-    }   
+  let sum = answer.reduce((a,c) =>  a+c,0) // reduce함수를 사용해 총합 더한다.
  
-  }
-   return answer
+ // 이중 루프를 돌려, 두개의 값을 더한다. 
+    for(let i = 0; i<arr.length ; i++){
+      for(let j = 1; j<arr.length ; j++){
+
+        if(sum - (arr[i]+arr[j]) === 100){
+          answer.splice(j,1)
+          answer.splice(i,1)
+          console.log(i,j)
+        }
+       
+      }
+     
+    }
+  return answer
   
 
+ // 총합과 이중 루프의 두개의 값을 뺀다. 
+ // 그 결과값이 100이 나오는지 확인하라.
 }
 
-const arr = [20,7,23,19,10,15,25,8,13]
-nan(arr)
+let arr = [20, 7, 23, 19, 10, 15, 25, 8 ,13]
+ nan(arr)
+
 ```
