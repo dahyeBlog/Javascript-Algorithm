@@ -15,7 +15,6 @@
 ##  출력예제 1 
 - YES
 
-
 ## 나의 풀이법
 ```
 function solution(str) {
